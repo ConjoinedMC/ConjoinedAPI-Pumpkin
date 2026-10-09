@@ -1,0 +1,6 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.java text eol=lf
+*.rs text eol=lf
+*.yml text eol=lf
+*.args text eol=lf
