@@ -1,0 +1,12 @@
+[package]
+name = "conjoined-api"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "GPL-3.0-only"
+description = "Asynchronous HTTPS client for ConjoinedDB, usable by PumpkinMC plugins"
+
+[dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }
+uuid = "1"
+tokio = { version = "1", features = ["sync"] }
