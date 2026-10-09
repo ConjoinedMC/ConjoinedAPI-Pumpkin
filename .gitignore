@@ -1,0 +1,9 @@
+target/
+build/
+.idea/
+*.iml
+.env
+*.db*
+*.p12
+*.jks
+config.properties
