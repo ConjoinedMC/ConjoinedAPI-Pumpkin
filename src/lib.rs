@@ -39,6 +39,7 @@ pub struct ConjoinedClient {
 }
 fn identifier(value: &str, max: usize, key: bool) -> bool {
     !value.is_empty()
+        && (!key || (value != "." && value != ".."))
         && value.len() <= max
         && value.bytes().all(|b| {
             b.is_ascii_lowercase()
@@ -159,6 +160,8 @@ mod tests {
         assert!(ConjoinedClient::new("https://localhost", "../escape", &"a".repeat(32)).is_err());
         assert!(ConjoinedClient::new("https://localhost", "example", "short").is_err());
         assert!(!identifier("../escape", 128, true));
+        assert!(!identifier(".", 128, true));
+        assert!(!identifier("..", 128, true));
         assert!(identifier("balance.v1", 128, true));
     }
 }

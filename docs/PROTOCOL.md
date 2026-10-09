@@ -6,6 +6,8 @@ The token is authorized for exactly one namespace. Requests do not depend on con
 `/v1/{namespace}/{owner}/{key}` supports GET, PUT, and DELETE.
 `owner` is `global` for non-player data or a canonical lowercase player UUID.
 Namespaces use `[a-z0-9_-]{1,64}`; keys use `[a-zA-Z0-9_.-]{1,128}`.
+Keys equal to `.` or `..` are rejected. Legacy dot-only records are inaccessible;
+export/rename them offline before upgrading if needed. Ordinary dotted keys remain valid.
 Values may contain at most 65,536 bytes, including empty values.
 
 | Operation | Success | Missing key |
