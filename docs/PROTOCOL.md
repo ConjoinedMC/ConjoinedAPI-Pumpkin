@@ -17,7 +17,8 @@ Values may contain at most 65,536 bytes, including empty values.
 | DELETE | 204 | 204 |
 
 Other responses: 400 invalid input, 401 unauthorized, 405 unsupported method,
-413 oversized body, 500 internal failure. Error responses contain no sensitive details.
+413 oversized body, 429 rate/concurrency limit, 507 storage quota/headroom rejection,
+500 internal failure. Error responses contain no sensitive details.
 Clients verify TLS certificates and do not follow redirects. Generate tokens from at least
 32 random bytes encoded as unpadded base64url. Never reuse a token across namespaces.
 
